@@ -21,6 +21,7 @@
 .App-header {
   /* background-color: #282c34; */
   height: 100vh;
+  overflow-Y: scroll;
   display: flex;
   flex-direction: column;
   align-items: center;
