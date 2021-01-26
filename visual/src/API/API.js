@@ -13,6 +13,7 @@ export class API extends Component {
   }
 
   componentDidMount() {
+    localStorage.clear();
     if (!(JSON.parse(localStorage.getItem('albums')))) {
       this.alubumAPI();
     } else {
