@@ -44,18 +44,16 @@
 }
 
 .button-group {
-
 }
-.button{
-    border: 1vh;
-    color: red;
+.button {
+  border: 1vh;
+  color: red;
 }
 
-.blocks .btn-primary 
-{
-    padding: 24px 12px;
-    margin: 0 5px;  
-    border-radius: 0;
+.blocks .btn-primary {
+  padding: 24px 12px;
+  margin: 0 5px;
+  border-radius: 0;
 }
 
 .btngrp li:first-child {
@@ -65,7 +63,7 @@
 .btngrp li:last-child {
   border-radius: 0 0 6px 6px;
 }
-.allsongs{
+.allsongs {
   padding-top: 100px;
 }
 
@@ -79,21 +77,21 @@
 
 .button-center {
   padding-top: 10px;
-  position:relative;
-  margin:0 auto;
-  clear:left;
-  height:auto;
+  position: relative;
+  margin: 0 auto;
+  clear: left;
+  height: auto;
   z-index: 0;
-  text-align:center;
+  text-align: center;
 }
 .allsongs-button {
   margin-right: 2px;
-  PADDING-right: 2px;
+  padding-right: 2px;
 }
 
 .card {
   margin-bottom: 30px;
-  width: '100%'
+  width: "100%";
 }
 
 .higlightButton {
@@ -104,16 +102,16 @@
 .inputTextBox {
   width: "100%";
   padding-top: 20px;
-  position:relative;
-  margin:0 auto;
-  clear:left;
-  height:auto;
+  position: relative;
+  margin: 0 auto;
+  clear: left;
+  height: auto;
   z-index: 0;
-  text-align:center;
+  text-align: center;
 }
 
 .errorText {
-  color: red important;
+  color: red !important;
   position: absolute;
   top: 50%;
   left: 50%;

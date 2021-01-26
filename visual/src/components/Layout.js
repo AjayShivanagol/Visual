@@ -8,11 +8,11 @@ export class Layout extends Component {
     constructor(props: Props) {
         super(props);
 
-        this.state = { 
+        this.state = {
             allSong: true,
             playListSong: false,
             allSongsData: JSON.parse(localStorage.getItem('SongList')) || [],
-            alubumData:  JSON.parse(localStorage.getItem('albums')) || []
+            alubumData: JSON.parse(localStorage.getItem('albums')) || []
         }
         this.allSongClicked = this.allSongClicked.bind(this);
         this.playlistClicked = this.playlistClicked.bind(this);
@@ -32,19 +32,19 @@ export class Layout extends Component {
     }
 
     render() {
-        const higlightallSongs =  this.state.allSong ? "higlightButton" : '';
-        const higlightPlayList =  this.state.playListSong ? "higlightButton" : '';
+        const higlightallSongs = this.state.allSong ? "higlightButton" : '';
+        const higlightPlayList = this.state.playListSong ? "higlightButton" : '';
         return (
             <div>
-            <Container>
-                <div className="button-center">
-                <ButtonGroup size="lg" className="mb-2">
-                    <Button onClick={this.allSongClicked} variant="secondary" className={`allsongs-button ${higlightallSongs}`}>All Songs</Button>
-                    <Button onClick={this.playlistClicked} variant="secondary" className={`${higlightPlayList}`}>Playlists</Button>
-                </ButtonGroup>
-                </div>
-                { this.state.allSong ? <AllSongs allSongsData= {this.state.allSongsData} /> : <PlayList alubumData = {this.props.alubumData} /> }
-            </Container>
+                <Container>
+                    <div className="button-center">
+                        <ButtonGroup size="lg" className="mb-2">
+                            <Button onClick={this.allSongClicked} variant="secondary" className={`allsongs-button ${higlightallSongs}`}>All Songs</Button>
+                            <Button onClick={this.playlistClicked} variant="secondary" className={`${higlightPlayList}`}>Playlists</Button>
+                        </ButtonGroup>
+                    </div>
+                    {this.state.allSong ? <AllSongs allSongsData={this.state.allSongsData} /> : <PlayList alubumData={this.props.alubumData} />}
+                </Container>
             </div>
         )
     }

@@ -7,7 +7,7 @@ export class AllSongs extends Component {
     constructor(props: Props) {
         super(props);
 
-         this.state = { 
+        this.state = {
             allSongsData: this.props.allSongsData || JSON.parse(localStorage.getItem('SongList')) || [],
             TextInputvalue: ''
         }
@@ -20,33 +20,33 @@ export class AllSongs extends Component {
         this.setState({
             TextInputvalue: event.target.value
         })
-      }
+    }
 
     search(searchKey) {
-        return this.state.allSongsData.filter(songs=> songs.title.toLowerCase().indexOf(searchKey.toLowerCase()) > -1)
+        return this.state.allSongsData.filter(songs => songs.title.toLowerCase().indexOf(searchKey.toLowerCase()) > -1)
     }
 
     render() {
-        const loding = <Loader/>
+        const loding = <Loader />
         const songList = this.search(this.state.TextInputvalue).map((songs) => (
-        <SongList
-            key = {songs.id}
-            albumId = { songs.albumId }
-            id = { songs.id}
-            title = { songs.title }
-            url = { songs.url }
-            thumbnailUrl = { songs.thumbnailUrl }/>
+            <SongList
+                key={songs.id}
+                albumId={songs.albumId}
+                id={songs.id}
+                title={songs.title}
+                url={songs.url}
+                thumbnailUrl={songs.thumbnailUrl} />
         ));
 
         return (
             <>
-            <div className="inputTextBox">
-                <input type="text" name="name" placeholder="search for song..."  onChange={this.handleTextInputChange}/>
-            </div>
-            {!JSON.parse(localStorage.getItem('SongList')) ? loding : (songList.length === 0) ? 
-            <div className="errorText">
-                <h1>No Data found!</h1>
-                </div> : songList}
+                <div className="inputTextBox">
+                    <input type="text" name="name" placeholder="search for song..." onChange={this.handleTextInputChange} />
+                </div>
+                {!JSON.parse(localStorage.getItem('SongList')) ? loding : (songList.length === 0) ?
+                    <div className="errorText">
+                        <h1>No Data found!</h1>
+                    </div> : songList}
             </>);
     }
 }
