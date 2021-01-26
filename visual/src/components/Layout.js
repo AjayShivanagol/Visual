@@ -16,7 +16,20 @@ export class Layout extends Component {
         }
         this.allSongClicked = this.allSongClicked.bind(this);
         this.playlistClicked = this.playlistClicked.bind(this);
+        this.unload.bind(this);
     }
+
+     componentDidMount() {
+        window.addEventListener("beforeunload", this.unload);
+      }
+      
+      componentWillUnmount() {
+        window.removeEventListener("beforeunload", this.unload);
+      }
+      
+      unload(e) {
+        localStorage.clear();
+      }
 
     allSongClicked() {
         this.setState({
