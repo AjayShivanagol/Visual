@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import SongList from './SongList';
 import Loader from '../CustomCompent/Loader';
+import { InputGroup, FormControl } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 export class AllSongs extends Component {
 
@@ -22,6 +25,7 @@ export class AllSongs extends Component {
         })
     }
 
+    // this function is to serach
     search(searchKey) {
         return this.state.allSongsData.filter(songs => songs.title.toLowerCase().indexOf(searchKey.toLowerCase()) > -1)
     }
@@ -41,7 +45,16 @@ export class AllSongs extends Component {
         return (
             <>
                 <div className="inputTextBox">
-                    <input type="text" name="name" placeholder="search for song..." onChange={this.handleTextInputChange} />
+                    <InputGroup className="mb-2">
+                        <FormControl
+                            placeholder="search for Album..."
+                            onChange={this.handleTextInputChange}
+                        />
+                        <InputGroup.Append>
+                            <InputGroup.Text id="basic-addon2"><FontAwesomeIcon icon={faSearch} /></InputGroup.Text>
+                        </InputGroup.Append>
+                    </InputGroup>
+                    {/* <input type="text" name="name" placeholder="search for song..." onChange={this.handleTextInputChange} /> */}
                 </div>
                 {!JSON.parse(localStorage.getItem('SongList')) ? loding : (songList.length === 0) ?
                     <div className="errorText">
