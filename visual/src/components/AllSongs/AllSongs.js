@@ -47,7 +47,7 @@ export class AllSongs extends Component {
                 <div className="inputTextBox">
                     <InputGroup className="mb-2">
                         <FormControl
-                            placeholder="search for Album..."
+                            placeholder="search for Songs..."
                             onChange={this.handleTextInputChange}
                         />
                         <InputGroup.Append>
