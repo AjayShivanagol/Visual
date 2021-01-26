@@ -54,7 +54,6 @@ export class AllSongs extends Component {
                             <InputGroup.Text id="basic-addon2"><FontAwesomeIcon icon={faSearch} /></InputGroup.Text>
                         </InputGroup.Append>
                     </InputGroup>
-                    {/* <input type="text" name="name" placeholder="search for song..." onChange={this.handleTextInputChange} /> */}
                 </div>
                 {!JSON.parse(localStorage.getItem('SongList')) ? loding : (songList.length === 0) ?
                     <div className="errorText">
