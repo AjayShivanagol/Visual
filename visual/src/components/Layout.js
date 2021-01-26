@@ -19,17 +19,17 @@ export class Layout extends Component {
         this.unload.bind(this);
     }
 
-     componentDidMount() {
+    componentDidMount() {
         window.addEventListener("beforeunload", this.unload);
-      }
-      
-      componentWillUnmount() {
+    }
+
+    componentWillUnmount() {
         window.removeEventListener("beforeunload", this.unload);
-      }
-      
-      unload(e) {
+    }
+
+    unload(e) {
         localStorage.clear();
-      }
+    }
 
     allSongClicked() {
         this.setState({
@@ -56,7 +56,7 @@ export class Layout extends Component {
                             <Button onClick={this.playlistClicked} variant="secondary" className={`${higlightPlayList}`}>Playlists</Button>
                         </ButtonGroup>
                     </div>
-                    {this.state.allSong ? <AllSongs allSongsData={this.state.allSongsData} /> : <PlayList alubumData={this.props.alubumData} />}
+                    <div>{this.state.allSong ? <AllSongs allSongsData={this.state.allSongsData} /> : <PlayList alubumData={this.props.alubumData} />}</div>
                 </Container>
             </div>
         )

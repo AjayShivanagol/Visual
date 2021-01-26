@@ -20,11 +20,11 @@
 
 .App-header {
   /* background-color: #282c34; */
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   font-size: calc(10px + 2vmin);
   color: black;
 }
@@ -46,9 +46,9 @@
 }
 
 .button-group {
-  position:absolute; 
-  left:80px; 
-  top:20px
+  position: absolute;
+  left: 80px;
+  top: 20px;
 }
 .button {
   border: 1vh;
@@ -83,13 +83,11 @@
 .button-center {
   padding-top: 10px;
   margin: 0 auto;
-  /* clear: left; */
+  clear: left;
   height: auto;
   z-index: 0;
   text-align: center;
-  position:absolute; 
-  left: 44%; 
-  top:20px
+  position: relative;
 }
 .allsongs-button {
   margin-right: 2px;
@@ -99,8 +97,6 @@
 .card {
   margin-bottom: 30px;
   width: "100%";
-  position:absolute;
-  top: 20vh
 }
 
 .higlightButton {
@@ -111,14 +107,13 @@
 .inputTextBox {
   width: "100%";
   padding-top: 20px;
+  padding-bottom: 20px;
   margin: 0 auto;
   clear: left;
   height: auto;
   z-index: 0;
   text-align: center;
-  position:absolute;
-  left: 40%; 
-  top: 10vh
+  position: relative;
 }
 
 .errorText {
